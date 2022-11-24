@@ -18,7 +18,7 @@ int column = int.Parse(Console.ReadLine());
 int[,] matrix = new int[row, column];
 const int cellWidth = 3;
 
-void FillTriagle()
+void FillMatrix()
 {
     for (int i = 0; i < row; i++)
     {
@@ -55,7 +55,7 @@ void SortRow()
 
             for (int j = k; j < column; j++)
             {
-                if (matrix[i, j] <min) 
+                if (matrix[i, j] < min) 
                 {
                     min = matrix[i, j];
                     transpond = matrix[i, j - j + k];
@@ -70,7 +70,7 @@ void SortRow()
 
 
 Console.WriteLine();
-FillTriagle();
+FillMatrix();
 PrintMatrix();
 SortRow();
 PrintMatrix();
