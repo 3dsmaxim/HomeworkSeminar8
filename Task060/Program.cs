@@ -14,21 +14,21 @@ const int cellWidth = 3;
 
 void FillMatrix(int[,,] matrix)
 {
-    int[] UniqueArray = new int[89];
+    int[] uniqueArray = new int[89];
     int num;
 
-    for (int i = 0; i < UniqueArray.Length; i++)
+    for (int i = 0; i < uniqueArray.Length; i++)
     {
         num = new Random().Next(10, 100);
         for (int j = i; j >= 0; j--)
         {
-            if (UniqueArray[j] == num)
+            if (uniqueArray[j] == num)
             {
                 num = new Random().Next(10, 100);
                 j = i;
             }
         }
-        UniqueArray[i] = num;
+        uniqueArray[i] = num;
     }
     num = 0;
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -38,7 +38,7 @@ void FillMatrix(int[,,] matrix)
             
             for (int k = 0; k < matrix.GetLength(2); k++)
             {
-                matrix[i, j, k] = UniqueArray[num];
+                matrix[i, j, k] = uniqueArray[num];
                 num++;                     
             } 
         }
